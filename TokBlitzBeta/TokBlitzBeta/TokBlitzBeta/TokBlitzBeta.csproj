@@ -1,0 +1,116 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="bgSP.png" />
+    <None Remove="bt.png" />
+    <None Remove="GameAssets\Button\bC.png" />
+    <None Remove="GameAssets\Button\bCG.png" />
+    <None Remove="GameAssets\Button\bGS.png" />
+    <None Remove="GameAssets\Button\bMP.png" />
+    <None Remove="GameAssets\Button\bSP.png" />
+    <None Remove="GameAssets\Button\bTG.png" />
+    <None Remove="GameAssets\Button\btnC.png" />
+    <None Remove="GameAssets\Button\star.png" />
+    <None Remove="GameAssets\Button\starshine.png" />
+    <None Remove="GameAssets\Fonts\ProximaNova-Black.otf" />
+    <None Remove="GameAssets\Fonts\ProximaNovaCond-Thin.otf" />
+    <None Remove="GameAssets\Fonts\ProximaNovaCond-Xbold.otf" />
+    <None Remove="GameAssets\Pictures\bg1.png" />
+    <None Remove="GameAssets\Pictures\bt.png" />
+    <None Remove="GameAssets\Pictures\Homescreen.png" />
+    <None Remove="GameAssets\Pictures\InGame.png" />
+    <None Remove="GameAssets\Sprites\2.gif" />
+    <None Remove="GameAssets\Sprites\bord.png" />
+    <None Remove="GameAssets\Sprites\profile.png" />
+    <None Remove="GameAssets\Sprites\screen.png" />
+    <None Remove="GameAssets\Sprites\screenblank.png" />
+    <None Remove="GameAssets\Sprites\timer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="GameAssets\Button\bC.png" />
+    <EmbeddedResource Include="GameAssets\Button\bCG.png" />
+    <EmbeddedResource Include="GameAssets\Button\bGS.png" />
+    <EmbeddedResource Include="GameAssets\Button\bMP.png" />
+    <EmbeddedResource Include="GameAssets\Button\bSP.png" />
+    <EmbeddedResource Include="GameAssets\Button\bTG.png" />
+    <EmbeddedResource Include="GameAssets\Button\btnC.png" />
+    <EmbeddedResource Include="GameAssets\Button\star.png" />
+    <EmbeddedResource Include="GameAssets\Button\starshine.png" />
+    <EmbeddedResource Include="GameAssets\Fonts\ProximaNova-Black.otf" />
+    <EmbeddedResource Include="GameAssets\Fonts\ProximaNovaCond-Thin.otf" />
+    <EmbeddedResource Include="GameAssets\Fonts\ProximaNovaCond-Xbold.otf" />
+    <EmbeddedResource Include="GameAssets\Pictures\Homescreen.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\InGame.png" />
+    <EmbeddedResource Include="GameAssets\Sprites\2.gif" />
+    <EmbeddedResource Include="GameAssets\Sprites\bord.png" />
+    <EmbeddedResource Include="GameAssets\Sprites\screen.png" />
+    <EmbeddedResource Include="GameAssets\Sprites\screenblank.png" />
+    <EmbeddedResource Include="GameAssets\Sprites\timer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="GameAssets\Pictures\bgSP.png" />
+    <EmbeddedResource Include="bt.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\bg1.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\bt.png" />
+    <EmbeddedResource Include="GameAssets\Sprites\profile.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="CorrectPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GameMode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GameType.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MultiplayerInGame.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Sample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SinglePlayerInGame.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SPpage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SummaryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WrongPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PageAnimation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SinglePlayerInGame.xaml.cs">
+      <DependentUpon>SinglePlayerInGame.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

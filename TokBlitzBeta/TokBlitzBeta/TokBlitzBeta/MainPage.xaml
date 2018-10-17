@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+               xmlns:local="clr-namespace:TokBlitzBeta"
+             x:Class="TokBlitzBeta.MainPage"
+            >
+
+    <Grid>
+        <Image x:Name="background" Aspect="AspectFill"/>
+
+
+        <!-- Place new controls here -->
+      
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+          <!-- <lottie:AnimationView  
+                                  x:Name="sample"
+                                  Loop="True"
+                                  Animation="cat_paw.json"
+                                  AutoPlay="True"
+                                  Grid.Column="1"
+                                  Grid.Row="1"
+                                  Grid.RowSpan="2"
+                                  />-->
+            <Image x:Name="btnSP" Grid.Column="1" Grid.Row="4">
+                <Image.GestureRecognizers >
+                    <TapGestureRecognizer  Tapped="Single_player_Tapped"/>
+                </Image.GestureRecognizers>
+
+
+            </Image>
+            <Image x:Name="btnMulti" Grid.Column="1" Grid.Row="5">
+                <Image.GestureRecognizers >
+                    <TapGestureRecognizer  Tapped="Multiplayer_player_Tapped"/>
+                </Image.GestureRecognizers>
+
+
+            </Image>
+          
+
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TokBlitzBeta.GameType"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image x:Name="background" Aspect="AspectFill"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Choose Game Mode" 
+           HorizontalOptions="Center"
+                   Grid.Row="1"
+                   Grid.Column="1"
+           />
+                <StackLayout Grid.Row="2" Grid.Column="1" Grid.RowSpan="4">
+                    <Image x:Name="TokGroupButton">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TokGroupButton_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Picker Title="Select Tok Group"
+                x:Name="pick_type"
+                IsVisible="False">
+                        <Picker.Items>
+                            <x:String>Quotes</x:String>
+                            <x:String>Sayings</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+
+                    <Image x:Name="CategoryButton">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CategoryButton_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Picker Title="Select Category"
+                x:Name="pick_category" 
+                IsVisible="False"/>
+
+                    <Image x:Name="CustomButton">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CustomButton_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+
+
+                    <Image x:Name="CreateButton"
+                   IsVisible="False">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CreateButton_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TokBlitzBeta.MultiplayerInGame"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <Grid>
+            <Image x:Name="background" Aspect="Fill"/>
+            <Grid x:Name="screenLayout"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"  />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Image x:Name="profile1" Grid.Row="1" Grid.Column="0"/>
+                <Image x:Name="timer" Grid.Row="1" Grid.Column="1"/>
+                <Label Text="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Red" Grid.Row="1" Grid.Column="1"/>
+                <Image x:Name="profile2" Grid.Row="1" Grid.Column="2" />
+                <Image x:Name="round" Grid.Row="2" Grid.Column="1" />
+                <Image x:Name="board" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" />
+           
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+   
+</ContentPage>
