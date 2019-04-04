@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TokBlitzBeta.Blank2"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+
+        <Grid>
+
+            <Image x:Name="background" Aspect="Fill"/>
+            <FlexLayout 
+                        Direction="Column"
+                       AlignItems="Center"
+                        JustifyContent="SpaceEvenly">
+
+                <Grid x:Name="mainLayout" RowSpacing="5">
+
+                    <!---->
+                <Grid.RowDefinitions>
+                      
+                       <RowDefinition Height="15*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="12*"/>
+              
+                </Grid.RowDefinitions>
+            
+               <!--////////////////////////////////////////////////////////////////-->
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <Grid  x:Name="InfoSec" Grid.Row="0" >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="27*"/>
+                            <ColumnDefinition Width="46*"/>
+                            <ColumnDefinition Width="27*"/>
+                            <ColumnDefinition Width="5"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Image x:Name="Panel" Aspect="AspectFill" Grid.ColumnSpan="5" />
+                        <!--_____________________________________________________________________________-->
+
+                        <Grid x:Name="player1" Grid.Column="1" RowSpacing="0" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="60*"/>
+                                <RowDefinition Height="20*"/>
+                                <RowDefinition Height="20*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="Player1Name" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="GhostWhite"/>
+                            <Image x:Name="ProPic1" Grid.Row="1" Aspect="AspectFill" />
+                            <Image x:Name="Part1" Grid.Row="1" Aspect="Fill"/>
+                            <Grid  Grid.Row="1" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="Flag1" Grid.Row="0" Grid.Column="0"  Aspect="AspectFit" />
+                                <Label x:Name="TotalScore" Grid.Row="2" Grid.Column="2" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                            </Grid>
+                            <Image x:Name="Part2" Grid.Row="2" Aspect="Fill" />
+                            <Image x:Name="Part3" Grid.Row="3" Aspect="Fill"/>
+
+
+                            <Label x:Name="round1" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                            <Label x:Name="guess1" Grid.Row="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+
+
+                        </Grid>
+
+                        <!--_____________________________________________________________________________-->
+
+                        <Grid x:Name="BoardInfo" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="QouteCategory" Grid.Row="0"
+                               TextColor="GhostWhite"
+                                    VerticalOptions="CenterAndExpand" 
+                                      HorizontalOptions="CenterAndExpand" />
+                            <Label x:Name="QouteSource" Grid.Row="1"  
+                                TextColor="GhostWhite"
+                                    VerticalOptions="CenterAndExpand" 
+                                      HorizontalOptions="CenterAndExpand" />
+
+                        </Grid>
+
+                        <!--_____________________________________________________________________________-->
+                        <Grid x:Name="player2" Grid.Column="3" RowSpacing="0" IsVisible="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="60*"/>
+                                <RowDefinition Height="20*"/>
+                                <RowDefinition Height="20*"/>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="Player2Name" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="GhostWhite"/>
+                            <Image x:Name="ProPic2" Grid.Row="1" Aspect="AspectFill" />
+                            <Image x:Name="Part1_1" Grid.Row="1" Aspect="Fill"/>
+                            <Grid  Grid.Row="1" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="Flag2" Grid.Row="0" Grid.Column="0"  Aspect="AspectFit" />
+                                <Label x:Name="TotalScore2" Grid.Row="2" Grid.Column="2" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" />
+                            </Grid>
+                            <Image x:Name="Part2_1" Grid.Row="2" Aspect="Fill" />
+                            <Image x:Name="Part3_1" Grid.Row="3" Aspect="Fill"/>
+
+
+                            <Label x:Name="round2" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                            <Label x:Name="guess2" Grid.Row="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+
+
+                        </Grid>
+
+
+                    </Grid>
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <!---->
+                    
+                 <Grid  x:Name="GameBoard" Grid.Row="1">
+             
+                 </Grid>
+                
+                 <!---->
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <Grid x:Name="answer" Grid.Row="2">
+
+
+
+                    </Grid>
+                    <!---->
+                   <!--////////////////////////////////////////////////////////////////-->
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <Grid x:Name="choices"  Grid.Row="3">
+
+                    </Grid>
+
+                    <!--////////////////////////////////////////////////////////////////-->
+
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <Grid x:Name="PowerUps" Grid.Row="4" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="Footer" Grid.Row="2" Aspect="AspectFill" Grid.Column="0" Grid.ColumnSpan="6"/>
+                        <Image x:Name="Clock" Grid.Row="0" Aspect="AspectFit" Grid.Column="2" Grid.RowSpan="3">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TimeFreeze"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label x:Name="TheTimer" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="2" Grid.RowSpan="3">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TimeFreeze"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Grid  Grid.Row="0"  Grid.Column="3" Grid.RowSpan="3" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Image x:Name="Smash" Aspect="AspectFit" Grid.ColumnSpan="5" Grid.RowSpan="5">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SmashIt"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image x:Name="SmashNumber" Grid.Row="1" Aspect="AspectFit" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                            <Label x:Name="SmashCount" Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                            <Label x:Name="SmashDeduction" Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                        </Grid>
+
+                        <Image x:Name="Shop" Grid.Row="1" Aspect="AspectFit" Grid.Column="5" Grid.RowSpan="2" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ShopSetting"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="Home" Grid.Row="1" Aspect="AspectFit" Grid.Column="0"  Grid.RowSpan="2"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ExitOrSave"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </Grid>
+                    <!--////////////////////////////////////////////////////////////////-->
+                    <!--////////////////////////////////////////////////////////////////-->
+
+                    <!--////////////////////////////////////////////////////////////////-->
+
+
+
+                </Grid>
+            </FlexLayout>
+            <!--////////////////////////////////////////////////////////////////-->
+            <ContentView x:Name="ResultPopUp"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All"
+                             >
+
+                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="PanelSetting" Aspect="Fill" Grid.Row="1" />
+
+                    <Grid Grid.Row="1" RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="ResultImage" Grid.Column="1" Grid.Row="1" Aspect="AspectFit"/>
+                        <Label x:Name="ResultScore" Grid.Column="1" Grid.Row="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                        <Label x:Name="ResultText" Grid.Column="1" Grid.Row="4" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                        <Image x:Name="ContinueButton" Grid.Column="1" Grid.Row="5" Aspect="AspectFit"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ContinueTapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Grid>
+
+            </ContentView>
+            <!--////////////////////////////////////////////////////////////////-->
+            <ContentView x:Name="SavingGame"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All"
+                             >
+                <FlexLayout>
+                    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <!-- <Image x:Name="PanelSetting1" Aspect="Fill" Grid.Row="1" />-->
+
+                        <Grid Grid.Row="1" RowSpacing="0">
+                          
+                            <Image x:Name="ContinueButton1" Grid.Column="1" Grid.Row="6" Aspect="AspectFit"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ExitTapped"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </Grid>
+                </FlexLayout>
+            </ContentView>
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+
+</ContentPage>

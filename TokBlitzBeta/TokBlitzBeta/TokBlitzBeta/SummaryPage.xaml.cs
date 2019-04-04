@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TokBlitzBeta.GameLogic;
+using TokBlitzBeta.GamePlay;
 namespace TokBlitzBeta
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,11 +15,15 @@ namespace TokBlitzBeta
 		public SummaryPage ()
 		{
 			InitializeComponent ();
-		}
-
+            background.Source = ImageSource.FromResource("TokBlitzBeta.GameAssets.Pictures.bg1.png");
+            TotalScore.Text = "Totat Score: " + PointSystem.TotalScore();
+        }
         private async void Button_Clicked(object sender, EventArgs e)
         {
-
+         
+            PointSystem.ResetScore();
+            Flow.ResetRound();
+            
             var navPage = new NavigationPage(new MainPage());
             await Task.Delay(200);
             await navPage.FadeTo(0, 250);

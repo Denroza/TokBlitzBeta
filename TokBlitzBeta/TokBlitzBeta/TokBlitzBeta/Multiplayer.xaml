@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TokBlitzBeta.Multiplayer">
+    <StackLayout
+        VerticalOptions="StartAndExpand">
+
+        <StackLayout
+        VerticalOptions="End">
+
+            <Entry
+               x:FieldModifier="public"
+               x:Name="txtUserName"
+               Text=""
+               Placeholder="Enter user name here..."
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+            <Button
+           x:FieldModifier="public"
+           x:Name="btnConnect"
+           Text="Connect"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Clicked="btnConnect_Clicked"/>
+        </StackLayout>
+
+
+        <ScrollView
+        x:FieldModifier="public"
+        x:Name="multiplayerContent"
+        >
+            <StackLayout
+            VerticalOptions="Start">
+                <Label
+           x:FieldModifier="public"
+           x:Name="lblMessages"
+           Text="Messages will show up here." 
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           FontSize="Small"/>
+                <ActivityIndicator
+                x:FieldModifier="public"
+                x:Name="spinner"
+                IsVisible="False"
+                IsRunning="False"/>
+
+
+
+
+                <Grid
+            x:FieldModifier="public"
+            x:Name="gridRoundGuess"
+            IsVisible="False"
+            >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+               Grid.Row="0" Grid.Column="0"
+               x:FieldModifier="public"
+               Text=" P1 Round " 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="0" Grid.Column="1"
+               x:FieldModifier="public"
+               Text=" P1 Guess " 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="0" Grid.Column="2"
+               x:FieldModifier="public"
+               Text=" Time " 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="0" Grid.Column="3"
+               x:FieldModifier="public"
+               Text=" P2 Round " 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="0" Grid.Column="4"
+               x:FieldModifier="public"
+               Text=" P2 Guess " 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+
+                    <Label
+               Grid.Row="1" Grid.Column="0"
+               x:FieldModifier="public"
+               x:Name="lblRoundP1"
+               Text="0" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="1" Grid.Column="1"
+               x:FieldModifier="public"
+               x:Name="lblGuessP1"
+               Text="0" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="1" Grid.Column="2"
+               x:FieldModifier="public"
+               x:Name="lblTimer"
+               Text="0" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="1" Grid.Column="3"
+               x:FieldModifier="public"
+               x:Name="lblRoundP2"
+               Text="0" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                    <Label
+               Grid.Row="1" Grid.Column="4"
+               x:FieldModifier="public"
+               x:Name="lblGuessP2"
+               Text="0" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+
+                    <Button
+               Grid.Row="2" Grid.Column="0"
+               x:FieldModifier="public"
+               x:Name="btnRoundP1"
+               Text="+1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsEnabled="False"
+               Clicked="btnRoundP1_Clicked"/>
+                    <Button
+               Grid.Row="2" Grid.Column="1"
+               x:FieldModifier="public"
+               x:Name="btnGuessP1"
+               Text="+1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsEnabled="False"
+               Clicked="btnGuessP1_Clicked"/>
+                    <Button
+               Grid.Row="2" Grid.Column="2"
+               x:FieldModifier="public"
+               x:Name="btnStartTimer"
+               Text="Start Timer"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsEnabled="False"
+               Clicked="btnStartTimer_Clicked"/>
+                    <Button
+               Grid.Row="2" Grid.Column="3"
+               x:FieldModifier="public"
+               x:Name="btnRoundP2"
+               Text="+1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsEnabled="False"
+               Clicked="btnRoundP2_Clicked"/>
+                    <Button
+               Grid.Row="2" Grid.Column="4"
+               x:FieldModifier="public"
+               x:Name="btnGuessP2"
+               Text="+1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsEnabled="False"
+               Clicked="btnGuessP2_Clicked"/>
+
+
+                </Grid>
+
+                <Label
+               x:Name="lblStatus"
+               x:FieldModifier="public"
+               Text="Please connect first before setting up a game" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+                <ActivityIndicator
+                x:FieldModifier="public"
+                x:Name="waitingSpinner"
+                IsVisible="False"
+                IsRunning="False"/>
+
+                <Button
+               x:FieldModifier="public"
+               x:Name="btnSetup"
+               Text="Find Players"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsEnabled="False"
+               Clicked="BtnSetup_Clicked"/>
+
+                <Button
+                x:FieldModifier="public"
+                x:Name="btnStopWaiting"
+                Text="Stop Waiting"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                IsVisible="False"
+                IsEnabled="False"
+                Clicked="BtnStopWaiting_Clicked"/>
+
+
+                <StackLayout
+                    x:FieldModifier="public"
+                    x:Name="multiplayerGameContent"
+                    IsVisible="False">
+
+                    <Label
+                       x:Name="lblGameContent"
+                       x:FieldModifier="public"
+                       Text="" 
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="Medium"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label
+                           x:FieldModifier="public"
+                           Text="Only allow messages with the room id:" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="Small"/>
+                        <Switch
+                            x:FieldModifier="public"
+                            x:Name="limitToRoomId"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Toggled="LimitToRoomId_Toggled"
+                            IsToggled="False"
+                            />
+                    </StackLayout>
+                </StackLayout>
+
+
+
+            </StackLayout>
+        </ScrollView>
+
+
+
+
+
+    </StackLayout>
+
+    <!--<Label
+               x:Name="lblPlayerNum"
+               x:FieldModifier="public"
+               Text="Check below to set device as Player 1:" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Small"/>
+    <Switch
+                x:FieldModifier="public"
+                x:Name="chkP1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Toggled="ChkP1_Toggled"
+                IsToggled="False"
+                />-->
+</ContentPage>

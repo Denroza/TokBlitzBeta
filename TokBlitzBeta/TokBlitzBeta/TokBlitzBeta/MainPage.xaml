@@ -2,49 +2,281 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-               xmlns:local="clr-namespace:TokBlitzBeta"
+               xmlns:local="clr-namespace:TokBlitzBeta" 
              x:Class="TokBlitzBeta.MainPage"
+             NavigationPage.HasNavigationBar="False"
             >
+    <ContentPage.Content>
 
-    <Grid>
-        <Image x:Name="background" Aspect="AspectFill"/>
-
-
-        <!-- Place new controls here -->
       
+        <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="30"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="50"/>
-            </Grid.ColumnDefinitions>
-          <!-- <lottie:AnimationView  
-                                  x:Name="sample"
-                                  Loop="True"
-                                  Animation="cat_paw.json"
-                                  AutoPlay="True"
-                                  Grid.Column="1"
-                                  Grid.Row="1"
-                                  Grid.RowSpan="2"
-                                  />-->
-            <Image x:Name="btnSP" Grid.Column="1" Grid.Row="4">
-                <Image.GestureRecognizers >
-                    <TapGestureRecognizer  Tapped="Single_player_Tapped"/>
-                </Image.GestureRecognizers>
+            <Image x:Name="background" Aspect="AspectFill"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="Blimp" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2" Aspect="AspectFit"/>
+                <Image x:Name="Plane" Grid.Row="2" Grid.Column="4"  Aspect="AspectFit"/>
+                <Image x:Name="Cloud" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="3" Aspect="AspectFit"/>
+
+                <Image x:Name="City" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="2" Aspect="AspectFill"/>
+           
 
 
-            </Image>
-            <Image x:Name="btnMulti" Grid.Column="1" Grid.Row="5">
+            </Grid>
+                    <!-- Place new controls here -->
+
+                <Grid x:Name="main">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="80*"/>
+
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="Logo" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"/>
+
+                    <Grid Grid.Column="1" Grid.Row="4">
+
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                    <ImageButton x:Name="Shop"  Grid.Column="1"  Clicked="ShowShop" BackgroundColor="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                        <ImageButton x:Name="Play"  Grid.Column="2" Clicked="Play_Tapped" BorderColor="Transparent" BackgroundColor="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton x:Name="Settings" Grid.Column="3" Clicked="ShowSettings" BackgroundColor="Transparent" BorderColor="Transparent"/>
+
+
+
+                </Grid>
+                    <Grid Grid.Column="1" Grid.Row="5" Grid.RowSpan="6">
+                      <!--   <FlexLayout 
+                        x:Name="TheDifficulties"
+                        Direction="Column"
+                       AlignItems="Center"
+                        JustifyContent="SpaceEvenly"
+                        IsVisible="False">
+                        <ImageButton x:Name="L1" IsEnabled="True" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="L1Tapped" >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.5"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+
+
+
+                        <ImageButton x:Name="L2" IsEnabled="True"
+                              BackgroundColor="Transparent" BorderColor="Transparent" Clicked="L2Tapped"
+                      >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.5"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                        <ImageButton x:Name="L3" IsEnabled="True"
+                             BorderColor="Transparent" BackgroundColor="Transparent" Clicked="L3Tapped"
+                      >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.5"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                        <ImageButton x:Name="L4" IsEnabled="True"
+                             BorderColor="Transparent" BackgroundColor="Transparent" Clicked="L4Tapped"
+                      >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.5"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                        <Image x:Name="Home"  Grid.Row="0" Grid.Column="2"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="HomeTapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </FlexLayout>
+                  <FlexLayout   
+                        x:Name="Modes"
+                        Direction="Column"
+                       AlignItems="Center"
+                        JustifyContent="SpaceEvenly"
+                        IsVisible="True">
+                        <ImageButton x:Name="SinglePlayer" IsEnabled="True"
+                            BackgroundColor="Transparent" BorderColor="Transparent"
+                                     Clicked="SinglePlayer_Tapped"
+                      >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.5"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                        <ImageButton x:Name="Multiplayer" IsEnabled="True"
+                             BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Multiplayer_Tapped"
+                      >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.5"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+
+                    </FlexLayout>-->
+                  
+                </Grid>
+                    <!--  
+               <Image x:Name="btnSP"  Grid.Column="2">
+                    <Image.GestureRecognizers >
+                        <TapGestureRecognizer  Tapped="Single_player_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+               <lottie:AnimationView  
+                                  x:Name="btnSP"
+                                  Loop="False"
+                                  Animation="Playbutton.json"
+                                 AutoPlay="True"
+                             Grid.Column="2"
+              
+                              OnClick="Single_player_Tapped"
+                                  />
+         
+            <Image x:Name="btnMulti" Grid.Column="1" Grid.Row="6">
                 <Image.GestureRecognizers >
                     <TapGestureRecognizer  Tapped="Multiplayer_player_Tapped"/>
                 </Image.GestureRecognizers>
@@ -52,7 +284,643 @@
 
             </Image>
           
+-->
+                </Grid>
+            <!--==================================      Settings View           ===========================================-->
+            <ContentView x:Name="SettingsPopUp"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All">
+
+                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="60*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="PanelSetting" Aspect="Fill" Grid.Row="1"/>
+                    <FlexLayout  Grid.Row="1" >
+                        <Grid  RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="40*"/>
+                                <ColumnDefinition Width="10*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="60*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+                            <ImageButton x:Name="Close" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="3"  Grid.Row="0" Grid.RowSpan="2" Aspect="AspectFill"  Clicked="CloseScreen" BackgroundColor="Transparent"   >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.5"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+
+                            <Label Text="SETTINGS"  FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+                            <Grid
+                                 Grid.Column="1"
+                                Grid.Row="2">
+
+                                <Label Text="SOUNDS" FontFamily="Face Off M54.ttf#Face Off M54" FontAttributes="Bold" Grid.Row="1" />
+                                <Label Text="MUSIC" FontFamily="Face Off M54.ttf#Face Off M54" FontAttributes="Bold" Grid.Row="2"/>
+                                <Label x:Name="htp" Text="HOW TO PLAY" FontFamily="Face Off M54.ttf#Face Off M54" FontAttributes="Bold" Grid.Row="3" />
+                                <Label x:Name="policy" Text="PRIVACY POLICY" FontFamily="Face Off M54.ttf#Face Off M54" FontAttributes="Bold" Grid.Row="4"/>
+                                <Label Text="CONTACT US" FontAttributes="Bold" FontFamily="Face Off M54.ttf#Face Off M54" Grid.Row="5"/>
+
+                            </Grid>
+
+
+                            <Grid
+                               
+                                Grid.Column="2"
+                                Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <ImageButton x:Name="box_sounds" Aspect="AspectFit" BackgroundColor="Transparent" Clicked="CheckSounds" Grid.Row="1" />
+                                <ImageButton x:Name="box_music" Aspect="AspectFit" BackgroundColor="Transparent" Clicked="CheckMusic" Grid.Row="2" />
+                                <ImageButton x:Name="chk_sounds" Aspect="AspectFit" BackgroundColor="Transparent" Clicked="CheckSounds" Grid.Row="1" />
+                                <ImageButton x:Name="chk_music" Aspect="AspectFit" BackgroundColor="Transparent" Clicked="CheckMusic" Grid.Row="2" />
+                                <Label Text="@TokBlitz Twitter" FontFamily="Face Off M54.ttf#Face Off M54" Grid.Row="5"/>
+                            </Grid>
+                          
+
+                        </Grid>
+
+                    </FlexLayout>
+                </Grid>
+               
+            </ContentView>
+            
+            <!--WebView-->
+            <ContentView x:Name="PrivacyPopUp"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="80*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                   
+              
+                    <WebView x:Name="Policy" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+               
+
+            </ContentView>
+            <!--How To Play-->
+            <ContentView x:Name="HTPPopUp"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All">
+                <Grid x:Name="HTP">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="80*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+
+                 
+
+                </Grid>
+
+
+            </ContentView>
+
+            <!--==================================      Loading View           ===========================================-->
+            <ContentView x:Name="LoadingBit"
+                  IsVisible="false"
+                      >
+                
+
+                <Grid>
+             <Image x:Name="background1" Aspect="Fill"/>
+                    <StackLayout
+            Padding="30"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+                        <Image x:Name="LoadingLogo" Aspect="AspectFill"/>
+                        <ActivityIndicator x:Name="Fetch" Color="White" />
+                        <Label x:Name="lblMessages" />
+                      <!--   <Button x:Name="Btn_Find" Text="Stop Waiting" IsVisible="False" Clicked="BtnStopWaiting_Clicked" />
+                
+                            <Label x:Name="DetailLoad"
+                FontAttributes="Bold"
+                Text="Loading..."
+                TextColor="White"
+                 VerticalOptions="Center"/>
+                    -->
+                    </StackLayout>
+
+                </Grid>
+              
+            </ContentView>
+            <!--==================================      User View           ===========================================-->
+            <ContentView x:Name="UserControl"
+                      BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                  
+                    <Image x:Name="PanelSetting1" Aspect="Fill" Grid.Row="1"/>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="94*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="CloseUsers" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="4" Aspect="AspectFit" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CloseUser"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="Login"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"
+                               VerticalTextAlignment="Center" 
+                               HorizontalTextAlignment="Center"
+                               FontSize="Large"
+                               FontFamily="Face Off M54.ttf#Face Off M54"
+                               />
+                        <Grid Grid.Row="2" Grid.Column="2">
+                            <StackLayout>
+                                <Entry x:Name="User" Placeholder="Email" FontSize="Large"/>
+                            </StackLayout>
+                        </Grid>
+                        <Grid Grid.Row="3" Grid.Column="2">
+                            <StackLayout>
+                                <Entry x:Name="Password" Placeholder="Password" IsPassword="True" FontSize="Large" />
+                            </StackLayout>
+                        </Grid>
+                        <Grid Grid.Row="4" Grid.RowSpan="2" Grid.Column="2">
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                  
+                                    <Image x:Name="Login" Grid.Column="1"  Aspect="AspectFit" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="LogInAccount"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Image x:Name="SignUp" Grid.Column="2"  Aspect="AspectFit"/>
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                    <StackLayout x:Name="Loader"
+                                 IsVisible="False"
+                              Padding="30"
+                              BackgroundColor="Transparent"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center"
+                                 Grid.Row="1">
+
+                        <Image x:Name="LoadingLogo1" Aspect="AspectFill"/>
+                        <ActivityIndicator x:Name="Fetching" Color="White" />
+                    </StackLayout>
+
+                </Grid>
+
+            </ContentView>
+               <!--=================================       Shop              ===============================================-->
+            <ContentView x:Name="ShopPopUp"
+                 BackgroundColor="#C0808080"
+                 Padding="10, 0"
+                 IsVisible="false"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+                 AbsoluteLayout.LayoutFlags="All">
+
+                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="PanelSetting2" Aspect="Fill" Grid.Row="1"/>
+                    
+                    <FlexLayout  Grid.Row="1" >
+                        
+                        <Grid  RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15*"/>
+                                <ColumnDefinition Width="70*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="80*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="SHOP" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" TextColor="Black" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                            <ImageButton x:Name="Close1" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="2"  Grid.Row="0" Aspect="AspectFill"  Clicked="CloseScreen" BackgroundColor="Transparent"  >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.5"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <ImageButton x:Name="LeftArrow"  Aspect="AspectFit" Grid.Row="1" Grid.Column="0"  Clicked="ShopNextClicked" BackgroundColor="Transparent"   >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.5"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <ImageButton x:Name="RightArrow" Aspect="AspectFit"  Grid.Row="1" Grid.Column="2"   Clicked="ShopNextClicked" BackgroundColor="Transparent"  >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.5"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            
+                            <Grid x:Name="ShopSmash" Grid.Column="1" Grid.Row="1" RowSpacing="0" ColumnSpacing="0" >
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Image x:Name="Pane1" Grid.Row="0" Grid.Column="0" Aspect="Fill"/>
+                                <Image x:Name="Pane2" Grid.Row="0" Grid.Column="1" Aspect="Fill"/>
+                                <Image x:Name="Pane3" Grid.Row="1" Grid.Column="0" Aspect="Fill"/>
+                                <Image x:Name="Pane4" Grid.Row="1" Grid.Column="1" Aspect="Fill"/>
+                               <!--Start-->
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50*"/>
+                                        <ColumnDefinition Width="50*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="Smash1" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="x72" FontSize="Medium"  Grid.Row="0" Grid.Column="1" TextColor="DarkGray" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$1.99" FontSize="Large" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy1" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <Grid Grid.Row="0" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50*"/>
+                                        <ColumnDefinition Width="50*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="Smash2" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="x144" FontSize="Medium"  Grid.Row="0" Grid.Column="1" TextColor="DarkGray" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$2.99" FontSize="Large" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy2"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50*"/>
+                                        <ColumnDefinition Width="50*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="Smash3" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="x288" FontSize="Medium"  Grid.Row="0" Grid.Column="1" TextColor="DarkGray" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$3.99" FontSize="Large" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy3"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50*"/>
+                                        <ColumnDefinition Width="50*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="Smash4" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="x624" FontSize="Medium"  Grid.Row="0" Grid.Column="1" TextColor="DarkGray" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$9.99" FontSize="Large" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy4" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <!--End-->
+                            </Grid>
+                           
+                                <Grid x:Name="ShopOthers" Grid.Column="1" Grid.Row="1" IsVisible="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Image x:Name="Pane5" Grid.Row="0" Grid.Column="0" Aspect="Fill"/>
+                                <Image x:Name="Pane6" Grid.Row="0" Grid.Column="1" Aspect="Fill"/>
+                                <Image x:Name="Pane7" Grid.Row="1" Grid.Column="0" Aspect="Fill"/>
+                                <Image x:Name="Pane8" Grid.Row="1" Grid.Column="1" Aspect="Fill"/>
+                                <!--Start-->
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="NoAds" Aspect="AspectFit" Grid.Row="0"/>
+                                    <Label Text="$2.99" FontSize="Large" Grid.Row="1" TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy5" Grid.Row="2" Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <Grid Grid.Row="0" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="45*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="Book" Aspect="AspectFit" Grid.Row="0"/>
+                                    <Label Text="Education Mode" FontSize="Small"  Grid.Row="1" TextColor="GhostWhite" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$2.99" FontSize="Large" Grid.Row="2" TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy6"  Grid.Row="3"  Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="45*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="12" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" TextColor="GhostWhite"/>
+                                    <Label Text="SAVE DATA SLOT" FontSize="Small"  Grid.Row="1"  TextColor="GhostWhite" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$0.99" FontSize="Large" Grid.Row="2"  TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy7"  Grid.Row="3"  Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                 
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="45*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="15*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="30" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" TextColor="GhostWhite"/>
+                                    <Label Text="SAVE DATA SLOT" FontSize="Small"  Grid.Row="1"  TextColor="GhostWhite" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Face Off M54.ttf#Face Off M54"/>
+                                    <Label Text="$1.99" FontSize="Large" Grid.Row="2"  TextColor="Goldenrod" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                    <ImageButton x:Name="Buy8" Grid.Row="3"  Aspect="AspectFit"  BackgroundColor="Transparent"  >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.5"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </Grid>
+                                <!--End-->
+
+                            </Grid>
+                        </Grid>
+
+                    </FlexLayout>
+                </Grid>
+
+            </ContentView>
 
         </Grid>
-    </Grid>
+    </ContentPage.Content>
 </ContentPage>

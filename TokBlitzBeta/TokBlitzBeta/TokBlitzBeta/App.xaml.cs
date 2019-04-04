@@ -1,7 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using TokBlitzBeta.GamePlay;
+using Plugin.Connectivity;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using TokBlitzBeta.GamePlay;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TokBlitzBeta
 {
@@ -11,11 +16,14 @@ namespace TokBlitzBeta
         {
             InitializeComponent();
 
+            BGMusics.LoadGameSounds();
             MainPage = new MainPage();
+            
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
+
             // Handle when your app starts
         }
 

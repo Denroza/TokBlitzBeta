@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,103 +15,206 @@
 
   <ItemGroup>
     <None Remove="bgSP.png" />
-    <None Remove="bt.png" />
-    <None Remove="GameAssets\Button\bC.png" />
-    <None Remove="GameAssets\Button\bCG.png" />
-    <None Remove="GameAssets\Button\bGS.png" />
-    <None Remove="GameAssets\Button\bMP.png" />
-    <None Remove="GameAssets\Button\bSP.png" />
-    <None Remove="GameAssets\Button\bTG.png" />
-    <None Remove="GameAssets\Button\btnC.png" />
-    <None Remove="GameAssets\Button\star.png" />
-    <None Remove="GameAssets\Button\starshine.png" />
+    <None Remove="Data\quotesandsayings.json" />
+    <None Remove="GameAssets\Animated\Parts\footer.png" />
+    <None Remove="GameAssets\Animated\Parts\home.png" />
+    <None Remove="GameAssets\Animated\Parts\panel.png" />
+    <None Remove="GameAssets\Animated\Parts\panelhead.png" />
+    <None Remove="GameAssets\Animated\Parts\return.png" />
+    <None Remove="GameAssets\Animated\SS\settings1.png" />
+    <None Remove="GameAssets\Animated\SS\shop1.png" />
+    <None Remove="GameAssets\Animated\Parts\bg.png" />
+    <None Remove="GameAssets\Button\1.png" />
+    <None Remove="GameAssets\Button\2.png" />
+    <None Remove="GameAssets\Button\3.png" />
+    <None Remove="GameAssets\Button\4.png" />
+    <None Remove="GameAssets\Button\BlackButton.png" />
+    <None Remove="GameAssets\Button\category.png" />
+    <None Remove="GameAssets\Button\check.png" />
+    <None Remove="GameAssets\Button\checkbox.png" />
+    <None Remove="GameAssets\Button\close.png" />
+    <None Remove="GameAssets\Button\conti.png" />
+    <None Remove="GameAssets\Button\exit.png" />
+    <None Remove="GameAssets\Button\frame.png" />
+    <None Remove="GameAssets\Button\inShop.png" />
+    <None Remove="GameAssets\Button\l.png" />
+    <None Remove="GameAssets\Button\MP.png" />
+    <None Remove="GameAssets\Button\p.png" />
+    <None Remove="GameAssets\Button\P1.png" />
+    <None Remove="GameAssets\Button\P2.png" />
+    <None Remove="GameAssets\Button\P3.png" />
+    <None Remove="GameAssets\Button\play.png" />
+    <None Remove="GameAssets\Button\q.png" />
+    <None Remove="GameAssets\Button\RM.png" />
+    <None Remove="GameAssets\Button\RsM.png" />
+    <None Remove="GameAssets\Button\s.png" />
+    <None Remove="GameAssets\Button\SG.png" />
+    <None Remove="GameAssets\Button\smash.png" />
+    <None Remove="GameAssets\Button\SP.png" />
+    <None Remove="GameAssets\Button\SU.png" />
+    <None Remove="GameAssets\Button\tg.png" />
+    <None Remove="GameAssets\Button\variety.png" />
     <None Remove="GameAssets\Fonts\ProximaNova-Black.otf" />
     <None Remove="GameAssets\Fonts\ProximaNovaCond-Thin.otf" />
     <None Remove="GameAssets\Fonts\ProximaNovaCond-Xbold.otf" />
+    <None Remove="GameAssets\Labels\type.png" />
+    <None Remove="GameAssets\Pictures\bg.png" />
     <None Remove="GameAssets\Pictures\bg1.png" />
-    <None Remove="GameAssets\Pictures\bt.png" />
-    <None Remove="GameAssets\Pictures\Homescreen.png" />
+    <None Remove="GameAssets\Pictures\bgwrong.png" />
+    <None Remove="GameAssets\Pictures\blimp.png" />
+    <None Remove="GameAssets\Pictures\building.png" />
+    <None Remove="GameAssets\Pictures\circmon.png" />
+    <None Remove="GameAssets\Pictures\clock.png" />
+    <None Remove="GameAssets\Pictures\clouds.png" />
+    <None Remove="GameAssets\Pictures\correct.png" />
+    <None Remove="GameAssets\Pictures\fns.png" />
+    <None Remove="GameAssets\Pictures\FS.png" />
+    <None Remove="GameAssets\Pictures\fss.png" />
+    <None Remove="GameAssets\Pictures\fws.png" />
+    <None Remove="GameAssets\Pictures\HS.png" />
     <None Remove="GameAssets\Pictures\InGame.png" />
-    <None Remove="GameAssets\Sprites\2.gif" />
-    <None Remove="GameAssets\Sprites\bord.png" />
-    <None Remove="GameAssets\Sprites\profile.png" />
-    <None Remove="GameAssets\Sprites\screen.png" />
-    <None Remove="GameAssets\Sprites\screenblank.png" />
-    <None Remove="GameAssets\Sprites\timer.png" />
+    <None Remove="GameAssets\Pictures\logo_tokblitz.png" />
+    <None Remove="GameAssets\Pictures\panel.png" />
+    <None Remove="GameAssets\Pictures\part1.png" />
+    <None Remove="GameAssets\Pictures\part2.png" />
+    <None Remove="GameAssets\Pictures\part3.png" />
+    <None Remove="GameAssets\Pictures\plane.png" />
+    <None Remove="GameAssets\Pictures\TU.png" />
+    <None Remove="GameAssets\Pictures\wordframe.png" />
+    <None Remove="GameAssets\Pictures\x.png" />
+    <None Remove="GameAssets\Shop\al.png" />
+    <None Remove="GameAssets\Shop\ar.png" />
+    <None Remove="GameAssets\Shop\buy.png" />
+    <None Remove="GameAssets\Shop\educational.png" />
+    <None Remove="GameAssets\Shop\icon_smash.png" />
+    <None Remove="GameAssets\Shop\noads.png" />
+    <None Remove="GameAssets\Shop\panel.png" />
+    <None Remove="GameAssets\Sprites\blank.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="GameAssets\Button\bC.png" />
-    <EmbeddedResource Include="GameAssets\Button\bCG.png" />
-    <EmbeddedResource Include="GameAssets\Button\bGS.png" />
-    <EmbeddedResource Include="GameAssets\Button\bMP.png" />
-    <EmbeddedResource Include="GameAssets\Button\bSP.png" />
-    <EmbeddedResource Include="GameAssets\Button\bTG.png" />
-    <EmbeddedResource Include="GameAssets\Button\btnC.png" />
-    <EmbeddedResource Include="GameAssets\Button\star.png" />
-    <EmbeddedResource Include="GameAssets\Button\starshine.png" />
+    <EmbeddedResource Include="Data\quotesandsayings.json" />
+    <EmbeddedResource Include="GameAssets\Button\1.png" />
+    <EmbeddedResource Include="GameAssets\Button\2.png" />
+    <EmbeddedResource Include="GameAssets\Button\3.png" />
+    <EmbeddedResource Include="GameAssets\Button\4.png" />
+    <EmbeddedResource Include="GameAssets\Button\BlackButton.png" />
+    <EmbeddedResource Include="GameAssets\Button\category.png" />
+    <EmbeddedResource Include="GameAssets\Button\check.png" />
+    <EmbeddedResource Include="GameAssets\Button\checkbox.png" />
+    <EmbeddedResource Include="GameAssets\Button\exit.png" />
+    <EmbeddedResource Include="GameAssets\Button\l.png" />
+    <EmbeddedResource Include="GameAssets\Button\MP.png" />
+    <EmbeddedResource Include="GameAssets\Button\p.png" />
+    <EmbeddedResource Include="GameAssets\Button\P1.png" />
+    <EmbeddedResource Include="GameAssets\Button\P2.png" />
+    <EmbeddedResource Include="GameAssets\Button\P3.png" />
+    <EmbeddedResource Include="GameAssets\Button\q.png" />
+    <EmbeddedResource Include="GameAssets\Button\RM.png" />
+    <EmbeddedResource Include="GameAssets\Button\RsM.png" />
+    <EmbeddedResource Include="GameAssets\Button\SG.png" />
+    <EmbeddedResource Include="GameAssets\Button\SP.png" />
+    <EmbeddedResource Include="GameAssets\Button\SU.png" />
+    <EmbeddedResource Include="GameAssets\Button\variety.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\bgwrong.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\blimp.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\building.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\clouds.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\fns.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\FS.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\fss.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\fws.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\HS.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\panel.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\plane.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\TU.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="GameAssets\Animated\Parts\footer.png" />
+    <EmbeddedResource Include="GameAssets\Animated\Parts\panelhead.png" />
+    <EmbeddedResource Include="GameAssets\Button\close.png" />
+    <EmbeddedResource Include="GameAssets\Button\conti.png" />
+    <EmbeddedResource Include="GameAssets\Button\frame.png" />
+    <EmbeddedResource Include="GameAssets\Button\inShop.png" />
+    <EmbeddedResource Include="GameAssets\Button\play.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\circmon.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\clock.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="GameAssets\Animated\Parts\home.png" />
+    <EmbeddedResource Include="GameAssets\Animated\Parts\panel.png" />
+    <EmbeddedResource Include="GameAssets\Animated\Parts\return.png" />
+    <EmbeddedResource Include="GameAssets\Animated\SS\settings1.png" />
+    <EmbeddedResource Include="GameAssets\Animated\SS\shop1.png" />
+    <EmbeddedResource Include="GameAssets\Animated\Parts\bg.png" />
+    <EmbeddedResource Include="GameAssets\Button\s.png" />
+    <EmbeddedResource Include="GameAssets\Button\smash.png" />
+    <EmbeddedResource Include="GameAssets\Button\tg.png" />
     <EmbeddedResource Include="GameAssets\Fonts\ProximaNova-Black.otf" />
     <EmbeddedResource Include="GameAssets\Fonts\ProximaNovaCond-Thin.otf" />
     <EmbeddedResource Include="GameAssets\Fonts\ProximaNovaCond-Xbold.otf" />
-    <EmbeddedResource Include="GameAssets\Pictures\Homescreen.png" />
-    <EmbeddedResource Include="GameAssets\Pictures\InGame.png" />
-    <EmbeddedResource Include="GameAssets\Sprites\2.gif" />
-    <EmbeddedResource Include="GameAssets\Sprites\bord.png" />
-    <EmbeddedResource Include="GameAssets\Sprites\screen.png" />
-    <EmbeddedResource Include="GameAssets\Sprites\screenblank.png" />
-    <EmbeddedResource Include="GameAssets\Sprites\timer.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="GameAssets\Pictures\bgSP.png" />
-    <EmbeddedResource Include="bt.png" />
+    <EmbeddedResource Include="GameAssets\Labels\type.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\bg.png" />
     <EmbeddedResource Include="GameAssets\Pictures\bg1.png" />
-    <EmbeddedResource Include="GameAssets\Pictures\bt.png" />
-    <EmbeddedResource Include="GameAssets\Sprites\profile.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\correct.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\InGame.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\logo_tokblitz.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\part1.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\part2.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\part3.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\wordframe.png" />
+    <EmbeddedResource Include="GameAssets\Pictures\x.png" />
+    <EmbeddedResource Include="GameAssets\Shop\al.png" />
+    <EmbeddedResource Include="GameAssets\Shop\ar.png" />
+    <EmbeddedResource Include="GameAssets\Shop\buy.png" />
+    <EmbeddedResource Include="GameAssets\Shop\educational.png" />
+    <EmbeddedResource Include="GameAssets\Shop\icon_smash.png" />
+    <EmbeddedResource Include="GameAssets\Shop\noads.png" />
+    <EmbeddedResource Include="GameAssets\Shop\panel.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <EmbeddedResource Include="GameAssets\Sprites\blank.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CorrectPage.xaml">
+    <PackageReference Include="CocosSharp" Version="1.7.1" />
+    <PackageReference Include="CocosSharp.Forms" Version="1.7.1" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.1" />
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Client" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.0.4" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.1.0" />
+    <PackageReference Include="Xam.Plugins.Vibrate" Version="4.0.0.5" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Blank1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="GameMode.xaml">
+    <EmbeddedResource Update="Blank2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="GameType.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MultiplayerInGame.xaml">
+    <EmbeddedResource Update="Multiplayer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Sample.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SinglePlayerInGame.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="SPpage.xaml">
+    <EmbeddedResource Update="Sample3.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="SummaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="WrongPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="PageAnimation\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="SinglePlayerInGame.xaml.cs">
-      <DependentUpon>SinglePlayerInGame.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 </Project>

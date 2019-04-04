@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokBlitzBeta.Android", "TokBlitzBeta\TokBlitzBeta.Android\TokBlitzBeta.Android.csproj", "{4018E57F-7341-4691-809B-DB0A93E8BC4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokBlitzBeta", "TokBlitzBeta\TokBlitzBeta\TokBlitzBeta.csproj", "{E6959006-EFF8-4DAB-A08E-66AE79D2E297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokBlitzBeta", "TokBlitzBeta\TokBlitzBeta\TokBlitzBeta.csproj", "{E6959006-EFF8-4DAB-A08E-66AE79D2E297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,5 +11,6 @@ namespace TokBlitzBeta.Model
         public string Category { get; set; }
         public string QouteSource { get; set; }
         public int WordCount { get; set; }
+        public int MaxChar { get; set; }
     }
 }

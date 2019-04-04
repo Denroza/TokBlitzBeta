@@ -2,72 +2,354 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TokBlitzBeta.GameType"
-             NavigationPage.HasNavigationBar="False">
+              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid>
+         
             <Image x:Name="background" Aspect="AspectFill"/>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="85*"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="40"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Choose Game Mode" 
-           HorizontalOptions="Center"
-                   Grid.Row="1"
-                   Grid.Column="1"
-           />
-                <StackLayout Grid.Row="2" Grid.Column="1" Grid.RowSpan="4">
-                    <Image x:Name="TokGroupButton">
+                <Grid x:Name="PanelPart" Grid.Row="0">
+                    <Image x:Name="Panel" Aspect="AspectFill" />
+               </Grid>
+                <Grid  Grid.Row="0"> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+               
+                    <Image x:Name="Sign" Grid.Row="0" Aspect="AspectFit" Grid.RowSpan="2" Grid.Column="1"/>
+
+                    <ImageButton x:Name="Back"  Grid.Row="0" Grid.Column="0"  IsEnabled="True" BackgroundColor="Transparent" Clicked="BackTapped"  >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton x:Name="Home"  Grid.Row="0" Grid.Column="2"  IsEnabled="True" BackgroundColor="Transparent"  Clicked="HomeTapped"  >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                  
+                </Grid>
+              
+                    <FlexLayout x:Name="Menus"
+                        Grid.Row="1"
+                        Direction="Column"
+                       AlignItems="Center"
+                        JustifyContent="SpaceEvenly">
+                        
+                    <ImageButton x:Name="Variety"
+                             IsEnabled="True"
+                                     
+                                     Clicked="Variety_Clicked"
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+
+                    <!--  <ImageButton x:Name="Qoutes"
+                             IsEnabled="True"
+                                     
+                                     Clicked="QouteTapped"
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                        <ImageButton x:Name="Sayings"
+                               IsEnabled="True"
+                                     Clicked="SayingsTapped"
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>-->
+                    <Image x:Name="Category"   
+                             IsEnabled="True"
+                      >
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TokGroupButton_Tapped"/>
+                            <TapGestureRecognizer Tapped="CategoryTapped"/>
                         </Image.GestureRecognizers>
                     </Image>
+                    <ImageButton x:Name="Multiplayer" IsEnabled="True"
+                             BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Multiplayer_Tapped"
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
 
-                    <Picker Title="Select Tok Group"
-                x:Name="pick_type"
-                IsVisible="False">
-                        <Picker.Items>
-                            <x:String>Quotes</x:String>
-                            <x:String>Sayings</x:String>
-                        </Picker.Items>
-                    </Picker>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
 
-
-                    <Image x:Name="CategoryButton">
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                  <!-- <Image x:Name="UserGenerated"
+                                 IsEnabled="True"/>-->
+                    <Image x:Name="SavedGames"   >
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="CategoryButton_Tapped"/>
+                            <TapGestureRecognizer Tapped="LoadSaveData"/>
                         </Image.GestureRecognizers>
                     </Image>
+                
+                </FlexLayout>
+                <FlexLayout x:Name="DifficutyMenu"
+                              Grid.Row="1"
+                        Direction="Column"
+                       AlignItems="Center"
+                        JustifyContent="SpaceEvenly"
+                            IsVisible="False">
+                    <ImageButton x:Name="L1" IsEnabled="True" Clicked="L1Tapped"
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
 
-                    <Picker Title="Select Category"
-                x:Name="pick_category" 
-                IsVisible="False"/>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
 
-                    <Image x:Name="CustomButton">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="CustomButton_Tapped"/>
-                        </Image.GestureRecognizers>
-                    </Image>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton x:Name="L2" IsEnabled="True" Clicked="L2Tapped"
+                     >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton x:Name="L3" IsEnabled="True" Clicked="L3Tapped"
+                             
+                    >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton x:Name="L4" IsEnabled="True" Clicked="L4Tapped"
+                             
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    
+                </FlexLayout>
+
+
+                <Grid x:Name="CategorySection" ColumnSpacing="0"  IsVisible="False"   Grid.Row="1">
+                </Grid>
+                <ScrollView x:Name="Slots" Grid.Row="1" IsVisible="False">
+                    <Grid x:Name="SaveSlots" />
+               
+                </ScrollView>
+                <Grid x:Name="CategorySectionSelected"  IsVisible="False"   Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="CategoryName" Grid.Row="1" TextColor="GhostWhite" FontSize="Large" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="S1" Grid.Column="0" Aspect="AspectFit" IsVisible="False"/>
+                        <Image x:Name="S2" Grid.Column="1" Aspect="AspectFit" IsVisible="False"/>
+                        <Image x:Name="S3" Grid.Column="2" Aspect="AspectFit" IsVisible="False"/>
+                    </Grid>
+                    <Label x:Name="TheTitle" Grid.Row="3" TextColor="GhostWhite" FontSize="Large" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label x:Name="TotalToks" Grid.Row="4" TextColor="Red" FontSize="Large" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Label x:Name="ToksLeft" Grid.Row="5" TextColor="Yellow" FontSize="Large" FontFamily="Face Off M54.ttf#Face Off M54" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <ImageButton x:Name="Play" Grid.Row="6"  Clicked="Play_Clicked"
+                             BackgroundColor="Transparent"
+                      >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.5"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <Button Text="check" Clicked="Check_Clicked"/>
+
+                </Grid>
 
 
 
-                    <Image x:Name="CreateButton"
-                   IsVisible="False">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="CreateButton_Tapped"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
+
             </Grid>
+            <!--Loading Screen-->
+            <ContentView x:Name="LoadingBit"
+                IsVisible="false">
+                <Grid>
+                    <Image x:Name="background1" Aspect="Fill"/>
+
+                    <StackLayout
+            Padding="30"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+                        <Image x:Name="LoadingLogo" Aspect="AspectFill"/>
+                        <ActivityIndicator x:Name="Fetch" Color="White" />
+                        <Label x:Name="lblMessages" />
+                        <Button x:Name="Btn_Find" Text="Stop Waiting" IsVisible="False" Clicked="BtnStopWaiting_Clicked" />
+                        <!--       <Label x:Name="DetailLoad"
+                FontAttributes="Bold"
+                Text="Loading..."
+                TextColor="White"
+                VerticalOptions="Center"/>
+-->
+                    </StackLayout>
+
+                </Grid>
+
+            </ContentView>
+            
         </Grid>
+        
     </ContentPage.Content>
 </ContentPage>
